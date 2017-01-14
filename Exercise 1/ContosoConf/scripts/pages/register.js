@@ -5,27 +5,37 @@ var submitButton = form.querySelector("button");
 // TODO: Get the password <input> elements from the DOM by ID
 // var passwordInput = ...;
 // var confirmPasswordInput = ...;
-var passwordInput = document.getElementById("password");
-var confirmPasswordInput = document.getElementById("confirmPassword");
+var passwordInput = document.getElementById("password").value;
+var confirmPasswordInput = document.getElementById("confirmPassword").value;
+var passwordsMatch = (passwordInput===confirmPasswordInput);
 
 var checkPasswords = function () {
     // TODO: Compare passwordInput value to confirmPasswordInput value
-    passwordInput = document.getElementById("password");
-    confirmPasswordInput = document.getElementById("confirmPassword");
-    var passwordsEqual = (passwordInput==confirmPasswordInput);
+    passwordInput = document.getElementById("password").value;
+    confirmPasswordInput = document.getElementById("confirmPassword").value;
+    var passwordsEqual = (passwordInput===confirmPasswordInput);
+    var passwordsEqualtst = (passwordInput==confirmPasswordInput);
     // console.debug()
     // TODO: If passwords don't match then display error message on confirmPasswordInput (using setCustomValidity)
     if (!passwordsEqual)
         document.getElementById("password").setCustomValidity("Passwords don't match");
+        // document.getElementById("confirmPassword").setCustomValidity("Passwords don't match");
     // TODO: If passwords do match then clear the error message (setCustomValidity with empty string)
-    if (passwordsEqual)
+    //if (passwordsEqual)
+    else
         document.getElementById("password").setCustomValidity("");
+        // document.getElementById("confirmPassword").setCustomValidity("");
 };
 
 var addPasswordInputEventListeners = function () {
     // TODO: Listen for the "input" event on passwordInput and confirmPasswordInput.
     //       Call the checkPasswords function
-    checkPasswords();
+    var passw = document.getElementById("password");
+    passw.addEventListener("input", checkPasswords(), false);
+    var confirmPassword = document.getElementById("confirmPassword");
+    //var confirmPassword = form.closest("confirmPassword");
+    confirmPassword.addEventListener("keyup", checkPasswords(), false);
+
 };
 
 var formSubmissionAttempted = function() {

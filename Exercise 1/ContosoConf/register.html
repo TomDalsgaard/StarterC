@@ -43,11 +43,11 @@
                     <!-- Use the following template for the inputs -->
                     <div class="field">
                         <label for="firstName">First Name:</label>
-                        <input type="text" id="firstName" name="firstName" autofocus required/>
+                        <input type="text" id="firstName" name="firstName" autofocus required value="Ole"/>
                     </div>
                     <div class="field">
                         <label for="lastName">Last Name:</label>
-                        <input type="text" id="lastName" name="lastName" value="Scmidt" />
+                        <input type="text" id="lastName" name="lastName" required value="Scmidt" />
                     </div>
                     <div class="field">
                         <label for="emailAddress">Email Address:</label>
@@ -55,11 +55,11 @@
                     </div>
                     <div class="field">
                         <label for="password">Choose a Password:</label>
-                        <input type="password" id="password" name="password" required pattern="[a-zA-Z0-9]{5,}" title="At least 5 letters or numbers"/>
+                        <input type="password" id="password" name="password" required pattern="[a-zA-Z0-9]{3,}" title="At least 5 letters or numbers"/>
                     </div>
                     <div class="field">
                         <label for="confirmPassword">Confirm Password:</label>
-                        <input type="password" id="confirmPassword" name="confirmPassword" required pattern="[a-zA-Z0-9]{5,}" title="must be the same as above" />
+                        <input type="password" id="confirmPassword" name="confirmPassword" required pattern="[a-zA-Z0-9]{3,}" title="must be the same as above" />
                     </div>
                     <div class="field">
                         <label for="websiteUrl">Website:</label>
